@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sidebar</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+		<link href="common.css" rel="stylesheet" />
+		<script src="common.js" defer></script>
+	</head>
+	<body>
+		<nav id="sidebar" class="sidebar accordion bywr-accordion bg-dark-transparent bg-blurred text-white">
+			<div class="overlay"></div>
+			<div class="sidebar-content accordion-item flex-grow-1">
+				<div class="sidebar-option p-2o5">
+					<div class="navbar-brand has-background-contain" style="height: 48px; width: 48px; background-image: url('https://byuwur.net/img/icon.png')"></div>
+					<span class="ms-2 me-5 pe-5">easy-SPA-PHP</span>
+				</div>
+				<a class="sidebar-option" href="javascript:;"> <i class="fas fa-home"></i><span>Inicio</span><i class="fas fa-angle-right ms-auto"></i> </a>
+				<button class="accordion-header accordion-button p-2o5 collapsed" data-bs-toggle="collapse" data-bs-target="#test-drop" aria-expanded="false" aria-controls="test-drop"><i class="fas fa-list"></i><span>Lista:</span></button>
+				<div id="test-drop" class="accordion-collapse collapse bg-dark-transparent" data-bs-parent="#sidebar">
+					<a class="sidebar-option" href="javascript:;"><i class="fas fa-user"></i>Opción 1<i class="fas fa-angle-right ms-auto"></i></a>
+					<a class="sidebar-option" href="javascript:;"><i class="fas fa-user-plus"></i>Opción 2<i class="fas fa-angle-right ms-auto"></i></a>
+				</div>
+				<a class="sidebar-option" href="https://byuwur.net/error"> <i class="fas fa-bug"></i><span>Error</span><i class="fas fa-angle-right ms-auto"></i> </a>
+			</div>
+			<div class="sidebar-content accordion-item flex-grow-0">
+				<button class="accordion-header accordion-button p-2o5 collapsed" data-bs-toggle="collapse" data-bs-target="#lang-drop" aria-expanded="false" aria-controls="lang-drop"><i class="fas fa-earth-americas"></i><span>Idiomas/Languages:</span></button>
+				<div id="lang-drop" class="accordion-collapse collapse bg-dark-transparent" data-bs-parent="#sidebar">
+					<a class="sidebar-option" href="javascript:;" title="Español"><img src="https://byuwur.net/img/co.png" width="16px" height="12px" style="margin: 4px" alt="" /> ES<i class="fas fa-angle-right ms-auto"></i></a>
+					<a class="sidebar-option" href="javascript:;" title="English"><img src="https://byuwur.net/img/uk.png" width="16px" height="12px" style="margin: 4px" alt="" /> EN<i class="fas fa-angle-right ms-auto"></i></a>
+					<!--a class="sidebar-option" href="javascript:;"><i class="fas fa-home"></i>Home<i class="fas fa-angle-right ms-auto"></i></a-->
+				</div>
+				<p class="m-0 p-2 border-top" style="font-size: 0.75rem">&copy; 2024 <a href="https://byuwur.net">[Mateus] byUwUr</a>. Derechos reservados.<br />Hecho con<i class="fas fa-heart" aria-hidden="true"></i>por <a href="https://byuwur.net" target="_blank">[Mateus] byUwUr</a></p>
+			</div>
+			<a id="sidebar-toggle" href="javascript:;" title="Alternar menú lateral"><i class="fas fa-bars"></i><span>menú</span></a>
+			<div id="sidebar-hidden">
+				<div class="navbar-brand has-background-contain" style="height: 48px; width: 48px; background-image: url('https://byuwur.net/img/icon.png')"></div>
+				<div class="navbar-brand has-background-contain mt-auto" style="height: 48px; width: 48px; background-image: url('https://byuwur.net/img/icon.png')"></div>
+			</div>
+		</nav>
+
+		<div class="app-container">
+			<div class="container-fluid vh-100 d-flex flex-column align-items-center justify-content-center">
+				<p>Test</p>
+				<p>This is your content.</p>
+				<p>
+					More text.<b><i>(Look at it move!)</i></b>
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
