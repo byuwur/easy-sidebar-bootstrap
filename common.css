@@ -3,10 +3,10 @@
 	--sidebar-width: 5rem;
 	--sidebar-expanded-width: 20rem;
 }
-@font-face {
+/*@font-face {
 	font-family: "Bahnschrift";
 	src: url("./css/webfonts/bahnschrift.ttf") format("truetype");
-}
+} */
 * {
 	min-width: 0;
 	/* scroll */

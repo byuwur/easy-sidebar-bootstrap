@@ -40,14 +40,6 @@ The JavaScript file that handles the interactive functionality of the sidebar. I
     -   Click event for the sidebar toggle button.
     -   Hover events for expanding/collapsing the sidebar.
 
-### 4. `sidebar.standalone.html`
-
-This is a standalone version of the sidebar that can be used as a template or directly integrated into your projects. It includes the necessary HTML, CSS, and JavaScript inline, making it easier to copy and paste into your existing codebase.
-
--   **Features**:
-    -   Self-contained with inline styles and scripts.
-    -   Can be customized and modified without affecting the main `index.html` or any other files.
-
 ## Getting Started
 
 To integrate this sidebar into your project:
@@ -55,7 +47,6 @@ To integrate this sidebar into your project:
 1. **Include the necessary files**:
 
     - Copy the contents of `index.html`, `common.css`, and `common.js` into your project.
-    - Alternatively, use `sidebar.standalone.html` for a quicker setup.
 
 2. **Customize the sidebar**:
 
@@ -69,4 +60,4 @@ To integrate this sidebar into your project:
 
 ## License
 
-This project is licensed under the terms specified in the [LICENSE.md](LICENSE.md) file.
+This project is licensed under MIT. The terms specified in the [LICENSE.md](LICENSE.md) file.
