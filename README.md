@@ -22,7 +22,7 @@ This is the main HTML file that includes the sidebar component integrated into a
     -   **FontAwesome** for icons
     -   **jQuery** for DOM manipulation
 
-### 2. `common.css`
+### 2. `_common.css`
 
 This CSS file contains the styling for the sidebar, including the general body styles, background settings, and effects. It ensures that the sidebar and its elements are displayed correctly across different devices and screen sizes.
 
@@ -30,7 +30,7 @@ This CSS file contains the styling for the sidebar, including the general body s
 -   **Sidebar Styles**: Styles for the sidebar, accordion items, and toggle button.
 -   **Responsive Design**: Media queries to adjust the layout on smaller screens.
 
-### 3. `common.js`
+### 3. `_common.js`
 
 The JavaScript file that handles the interactive functionality of the sidebar. It includes event listeners for the sidebar toggle button, as well as logic for expanding and collapsing the sidebar based on user interaction.
 
@@ -46,7 +46,7 @@ To integrate this sidebar into your project:
 
 1. **Include the necessary files**:
 
-    - Copy the contents of `index.html`, `common.css`, and `common.js` into your project.
+    - Copy the contents of `index.html`, `_common.css`, and `_common.js` into your project.
 
 2. **Customize the sidebar**:
 
