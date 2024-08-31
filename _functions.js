@@ -12,7 +12,7 @@
  * @param {string} value The value of the cookie.
  * @param {number} minutes (Default 1y) The number of days until the cookie expires. A negative number expires the cookie.
  */
-function setCookie(name, value, minutes = 31536000) {
+function set_cookie(name, value, minutes = 31536000) {
 	document.cookie = `${name}=${encodeURIComponent(value)};max-age=${minutes};path=/`;
 }
 
@@ -21,7 +21,7 @@ function setCookie(name, value, minutes = 31536000) {
  * @param {string} name The name of the cookie to retrieve.
  * @return {string | null} The value of the cookie or null if not found.
  */
-function getCookie(name) {
+function get_cookie(name) {
 	return `; ${document.cookie}`.split(`; ${name}=`).pop().split(";").shift() || null;
 }
 
