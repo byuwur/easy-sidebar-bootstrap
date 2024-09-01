@@ -4,6 +4,8 @@
 
 A lightweight and customizable sidebar component built using Bootstrap and jQuery. This project allows you to quickly integrate a responsive sidebar into your web applications. The sidebar is fully collapsible and expandable, with smooth animations and an accordion-style menu structure.
 
+Test it out at: [codepen.io/byuwur/pen/VwJdWYL](https://codepen.io/byuwur/pen/VwJdWYL)
+
 ## Features
 
 -   **Responsive Design**: The sidebar adapts to various screen sizes, providing a seamless experience on both desktop and mobile devices.
@@ -60,4 +62,4 @@ To integrate this sidebar into your project:
 
 ## License
 
-This project is licensed under MIT. The terms specified in the [LICENSE.md](LICENSE.md) file.
+MIT (c) Andrés Trujillo [Mateus] byUwUr
