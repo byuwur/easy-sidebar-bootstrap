@@ -28,29 +28,23 @@
 	byCommon.initSidebar = function () {
 		// Check it exists in the first place. Duh..
 		const jqSidebar = $(byCommon.SIDEBAR_ID);
-		if (!jqSidebar.length) return;
+		if (!jqSidebar.length) return console.warn("Can't load Sidebar if element ain't present.");
 		console.log("Init <Sidebar />");
 		if (!get_cookie("SidebarExpand")) set_cookie("SidebarExpand", "on");
 		// Init the rest of the elements
 		const jqSidebarToggle = $(byCommon.SIDERBAR_TOGGLE_ID);
+		if (!jqSidebarToggle.length) console.warn(`Can't load Sidebar Element: "jqSidebarToggle". It doesn't exist.`);
 		const jqSidebarHidden = $(byCommon.SIDEBAR_HIDDEN_ID);
+		if (!jqSidebarHidden.length) console.warn(`Can't load Sidebar Element: "jqSidebarHidden". It doesn't exist.`);
 		const jqAppContainer = $(byCommon.APP_CONTAINER_SELECTOR);
+		if (!jqAppContainer.length) console.warn(`Can't load Sidebar Element: "jqAppContainer". It doesn't exist.`);
 		// Ensure the overlay inside the sidebar follows it accordingly, due to being an absolute positioned inside another
 		jqSidebar
 			.off("scroll")
-			.on(
-				"scroll",
-				(function () {
-					let sidebarScrollTop = 0;
-					return debounce(function () {
-						const top = Math.floor($(this).scrollTop()),
-							diff = top - sidebarScrollTop;
-						console.log(top);
-						if (jqSidebar.hasClass("sidebar-expanded")) $(`${byCommon.SIDEBAR_ID} .overlay`).css("height", `${$(`${byCommon.SIDEBAR_ID} .overlay`).height() + diff}px`);
-						sidebarScrollTop = top;
-					});
-				})()
-			)
+			.on("scroll", function () {
+				const overlay = $(this).find(".overlay");
+				if ($(overlay).length) $(overlay).height(`${this.scrollHeight}px`);
+			})
 			// Ensure the sidebar collapses when the mouse leaves the sidebar itself
 			.off("mouseleave")
 			.on("mouseleave", function () {
@@ -96,7 +90,9 @@
 	 */
 	byCommon.init = function () {
 		if (typeof jQuery === "undefined" && window.jQuery === undefined) return console.error("Init _common.js FAILED. No jQuery found.");
-		console.log("Init _common.js");
-		this.initSidebar();
+		$(() => {
+			console.log("Init _common.js");
+			byCommon.initSidebar();
+		});
 	};
 })(typeof window !== "undefined" ? window : this);
