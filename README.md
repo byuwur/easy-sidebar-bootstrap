@@ -1,3 +1,5 @@
+## This now forms part of [github.com/byuwur/spa.php](https://github.com/byuwur/spa.php). This repo will no longer be maintained to keep this in order in the base repo it is used. [This repo can also be used standalone]
+
 # byuwur/easy-sidebar-bootstrap
 
 **Easy Sidebar Bootstrap**
