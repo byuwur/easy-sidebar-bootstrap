@@ -4,63 +4,113 @@
 
 **Easy Sidebar Bootstrap**
 
-A lightweight and customizable sidebar component built using Bootstrap and jQuery. This project allows you to quickly integrate a responsive sidebar into your web applications. The sidebar is fully collapsible and expandable, with smooth animations and an accordion-style menu structure.
+A lightweight, responsive, and customizable sidebar component built with **Bootstrap** and **jQuery**.
+
+It provides a collapsible sidebar with responsive desktop/mobile behavior, optional accordion navigation, hover expansion, and persistent expanded/collapsed state.
 
 Test it out at: [codepen.io/byuwur/pen/VwJdWYL](https://codepen.io/byuwur/pen/VwJdWYL)
 
 ## Features
 
--   **Responsive Design**: The sidebar adapts to various screen sizes, providing a seamless experience on both desktop and mobile devices.
--   **Collapsible Sidebar**: The sidebar can be expanded or collapsed with a single click, offering more space for your content.
--   **Accordion Menu**: Includes an accordion-style menu for nested options, ideal for organizing related items.
--   **Customization**: Easily customizable with your styles, icons, and colors.
+- Responsive desktop and mobile layout
+- Collapsible and expandable sidebar
+- Persistent sidebar state
+- Hover expansion when collapsed
+- Bootstrap accordion support
+- Smooth transitions
+- Customizable dimensions and colors through CSS variables
+- Font Awesome icon support
+- Easy to integrate into an existing Bootstrap project
+
+## Dependencies
+
+The included example uses:
+
+- [Bootstrap 5.3.8](https://getbootstrap.com/)
+- [jQuery 4.0.0](https://jquery.com/)
+- [Font Awesome 7.3.0](https://fontawesome.com/) (Optional: only required for the icons used by the example markup and can be replaced or omitted)
 
 ## Files
 
-### 1. `index.html`
+### `index.html`
 
-This is the main HTML file that includes the sidebar component integrated into a basic layout. It uses Bootstrap, jQuery, and Font Awesome for styling and functionality.
+Standalone example containing the sidebar markup and basic page layout.
 
--   **External Resources**:
-    -   **Bootstrap** CSS and JS via CDN
-    -   **FontAwesome** for icons
-    -   **jQuery** for DOM manipulation
+### `_common.css`
 
-### 2. `_common.css`
+Contains the styles and responsive behavior required by the sidebar.
 
-This CSS file contains the styling for the sidebar, including the general body styles, background settings, and effects. It ensures that the sidebar and its elements are displayed correctly across different devices and screen sizes.
+The main dimensions can be customized through the variables at the top of the file:
 
--   **Root Variables**: Defines `--sidebar-width` and `--sidebar-expanded-width` for easy customization.
--   **Sidebar Styles**: Styles for the sidebar, accordion items, and toggle button.
--   **Responsive Design**: Media queries to adjust the layout on smaller screens.
+```css
+:root {
+  --sidebar-width: 5rem;
+  --sidebar-height: 4.5rem;
+  --sidebar-expanded-width: 20rem;
+}
+```
 
-### 3. `_common.js`
+### `_common.js`
 
-The JavaScript file that handles the interactive functionality of the sidebar. It includes event listeners for the sidebar toggle button, as well as logic for expanding and collapsing the sidebar based on user interaction.
+Handles sidebar initialization and interactive behavior, including:
 
--   **Dependencies**:
-    -   **jQuery** is required for this script to work.
--   **Event Listeners**:
-    -   Click event for the sidebar toggle button.
-    -   Hover events for expanding/collapsing the sidebar.
+- Expanding and collapsing
+- Hover behavior
+- Responsive initialization
+- Persistent sidebar state
+
+### `_functions.js`
+
+Contains the cookie helpers used by `_common.js` to preserve the sidebar state between page loads.
 
 ## Getting Started
 
-To integrate this sidebar into your project:
+Include Bootstrap, jQuery, the sidebar stylesheet, and the JavaScript files:
 
-1. **Include the necessary files**:
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="_common.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" defer></script>
+<script src="_functions.js" defer></script>
+<script src="_common.js" defer></script>
+```
 
-    - Copy the contents of `index.html`, `_common.css`, and `_common.js` into your project.
+Then copy or adapt the sidebar markup from `index.html`.
 
-2. **Customize the sidebar**:
+The component expects the following main elements:
 
-    - Update the sidebar options and links in the HTML file.
-    - Modify the CSS variables to adjust the sidebar width and colors.
-    - Add or remove items from the accordion menu as needed.
+```html
+<nav id="bywr-sidebar" class="bywr-sidebar"> ... </nav>
+<button id="bywr-sidebar-toggle" class="bywr-sidebar-toggle" type="button"> ... </button>
+<div id="bywr-sidebar-hidden" class="bywr-sidebar-hidden"> ... </div>
+<main class="app-container"> ... </main>
+```
 
-3. **Lauch your project**:
-    - Ensure all dependencies (Bootstrap, jQuery, Font Awesome) are correctly linked.
-    - Test the sidebar on different devices to verify responsiveness.
+Finally, initialize the component:
+
+```html
+<script>
+  byCommon.init();
+</script>
+```
+
+## Customization
+
+Modify the sidebar markup in `index.html` to add your own navigation links, accordion sections, branding, and icons.
+
+The component's size and appearance can be adjusted in `_common.css`, particularly through the CSS variables defined in `:root`.
+
+The example styles are intended as a starting point and can be adapted to match the design of the host application.
+
+## Browser Behavior
+
+On larger screens, the sidebar can remain expanded according to the user's saved preference.
+
+When collapsed, hovering over the sidebar area temporarily expands it without changing the saved preference.
+
+On smaller screens, the layout adapts so the sidebar can occupy the available viewport when expanded.
 
 ## License
 
