@@ -43,10 +43,6 @@
   background: #444;
 }
 /* === GENERAL === */
-@font-face {
-  font-family: "Bahnschrift";
-  src: url("./css/webfonts/bahnschrift.ttf") format("truetype");
-}
 * {
   min-width: 0;
   scrollbar-width: 12px;
